@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nithin & Jyotsna Wedding Invitation</title>
+    <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
+    <style>
+        body {
+            background-color: #fdfcf0; /* Soft cream background */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .instruction {
+            margin-bottom: 15px;
+            color: #8a7d4e;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.4; }
+            50% { opacity: 1; }
+            100% { opacity: 0.4; }
+        }
+
+        .container {
+            width: 90vw;
+            height: 75vh;
+            max-width: 450px;
+            max-height: 650px;
+        }
+
+        .card-page {
+            background: white;
+            border: 1px solid #e0d8b0;
+            overflow: hidden;
+        }
+
+        .card-page img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill; /* This ensures your invite fills the page */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="instruction">Swipe to Flip 📖</div>
+
+    <div class="container" id="weddingFlipbook">
+        <div class="card-page"><img src="1.jpg"></div>
+        
+        <div class="card-page"><img src="2.jpg"></div>
+        
+        <div class="card-page"><img src="3.jpg"></div>
+        
+        <div class="card-page"><img src="4.jpg"></div>
+        
+        <div class="card-page"><img src="5.jpg"></div>
+
+        <div class="card-page"><img src="6.jpg"></div>
+    </div>
+
+    <script>
+        const pageFlip = new St.PageFlip(document.getElementById('weddingFlipbook'), {
+            width: 450,
+            height: 650,
+            size: "stretch",
+            minWidth: 300,
+            maxWidth: 1000,
+            minHeight: 400,
+            maxHeight: 1350,
+            showCover: true,
+            mobileScrollSupport: true
+        });
+
+        pageFlip.loadFromHTML(document.querySelectorAll('.card-page'));
+    </script>
+</body>
+</html>
